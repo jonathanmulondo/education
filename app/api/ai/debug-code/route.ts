@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { OpenAI } from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export async function POST(request: NextRequest) {
   try {
     const { code, language, context, error_message } = await request.json();
@@ -15,6 +11,21 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    // Check if API key is available
+    if (!process.env.OPENAI_API_KEY) {
+      return NextResponse.json({
+        has_errors: false,
+        errors: [],
+        suggestions: [],
+        explanation: 'AI debugging is not configured. Add your OPENAI_API_KEY to enable this feature. For now, check your code for: common syntax errors, missing semicolons, incorrect pin modes, and proper Serial.begin() calls.',
+      });
+    }
+
+    // Initialize OpenAI only when needed
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
 
     const systemPrompt = `You are an expert programming tutor specializing in embedded systems and Arduino development.
 
@@ -63,16 +74,6 @@ Please analyze the code and provide debugging help.`;
     return NextResponse.json(result);
   } catch (error: any) {
     console.error('Error in debug-code endpoint:', error);
-
-    // Fallback response if API fails
-    if (!process.env.OPENAI_API_KEY) {
-      return NextResponse.json({
-        has_errors: false,
-        errors: [],
-        suggestions: [],
-        explanation: 'AI debugging is not configured. Add your OPENAI_API_KEY to .env.local to enable this feature. For now, check your code for: common syntax errors, missing semicolons, incorrect pin modes, and proper Serial.begin() calls.',
-      });
-    }
 
     return NextResponse.json(
       { error: 'Failed to analyze code', details: error.message },
