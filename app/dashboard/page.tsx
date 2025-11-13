@@ -52,12 +52,12 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
+    <div className="min-h-screen bg-black py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Welcome Section */}
         <div className="mb-8">
           <h1 className="mb-2">Welcome back, {user.name}!</h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-400">
             Continue your learning journey and track your progress
           </p>
         </div>
@@ -76,7 +76,7 @@ export default function DashboardPage() {
                     <p className="text-2xl font-bold text-gray-900 dark:text-white">
                       {stat.value}
                     </p>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                    <p className="text-sm text-gray-400">
                       {stat.label}
                     </p>
                   </div>

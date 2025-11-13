@@ -22,6 +22,12 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link
+              href="/dashboard"
+              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              Dashboard
+            </Link>
+            <Link
               href="/projects"
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
@@ -48,17 +54,11 @@ export default function Navbar() {
               <span>Leaderboard</span>
             </Link>
             <Link
-              href="/dashboard"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-            >
-              Dashboard
-            </Link>
-            <Link
               href="/mentor"
               className="flex items-center space-x-1 px-3 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition-colors font-semibold"
             >
               <Bot className="h-4 w-4" />
-              <span>AI Mentor</span>
+              <span>Ask Bob</span>
             </Link>
             <Link
               href="/login"
@@ -81,6 +81,13 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden py-4 space-y-2">
+            <Link
+              href="/dashboard"
+              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Dashboard
+            </Link>
             <Link
               href="/projects"
               className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
@@ -110,18 +117,11 @@ export default function Navbar() {
               Leaderboard
             </Link>
             <Link
-              href="/dashboard"
-              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Dashboard
-            </Link>
-            <Link
               href="/mentor"
               className="block px-4 py-2 bg-yellow-500 text-black font-semibold rounded-md hover:bg-yellow-400"
               onClick={() => setIsMenuOpen(false)}
             >
-              AI Mentor
+              Ask Bob
             </Link>
             <Link
               href="/login"

@@ -52,12 +52,12 @@ export default function ProjectsPage() {
   const difficulties: (DifficultyLevel | 'All')[] = ['All', 'Beginner', 'Intermediate', 'Advanced'];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12 px-4">
+    <div className="min-h-screen bg-black py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="mb-2">Project Explorer</h1>
-          <p className="text-gray-600 dark:text-gray-400">
+          <h1 className="mb-2 text-white">Project Explorer</h1>
+          <p className="text-gray-400">
             Browse hands-on STEM projects with step-by-step guidance
           </p>
         </div>
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
               placeholder="Search projects..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-gray-800"
+              className="w-full pl-12 pr-4 py-3 border border-gray-700 rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent bg-gray-900 text-white"
             />
           </div>
 
@@ -80,13 +80,13 @@ export default function ProjectsPage() {
           <div className="flex flex-col sm:flex-row gap-4">
             {/* Category Filter */}
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Category
               </label>
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value as ProjectCategory | 'All')}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800"
+                className="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-900 text-white"
               >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>
@@ -98,13 +98,13 @@ export default function ProjectsPage() {
 
             {/* Difficulty Filter */}
             <div className="flex-1">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Difficulty
               </label>
               <select
                 value={selectedDifficulty}
                 onChange={(e) => setSelectedDifficulty(e.target.value as DifficultyLevel | 'All')}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800"
+                className="w-full px-4 py-2 border border-gray-700 rounded-lg bg-gray-900 text-white"
               >
                 {difficulties.map((diff) => (
                   <option key={diff} value={diff}>
@@ -118,7 +118,7 @@ export default function ProjectsPage() {
 
         {/* Results Count */}
         <div className="mb-6">
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-400">
             Showing {filteredProjects.length} project{filteredProjects.length !== 1 ? 's' : ''}
           </p>
         </div>
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500 dark:text-gray-400 text-lg">
+            <p className="text-gray-400 text-lg">
               No projects found matching your criteria
             </p>
             <button
@@ -141,7 +141,7 @@ export default function ProjectsPage() {
                 setSelectedCategory('All');
                 setSelectedDifficulty('All');
               }}
-              className="mt-4 text-primary-600 hover:text-primary-700"
+              className="mt-4 text-yellow-500 hover:text-yellow-400"
             >
               Clear all filters
             </button>

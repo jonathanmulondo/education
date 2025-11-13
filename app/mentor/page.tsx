@@ -55,10 +55,10 @@ export default function MentorPage() {
             <Bot className="h-8 w-8 text-black" />
           </div>
           <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r from-white to-yellow-500 bg-clip-text text-transparent">
-            AI Mentor
+            Ask Bob
           </h1>
           <p className="text-gray-400 text-lg">
-            Your 24/7 STEM learning companion. Ask anything about electronics, programming, or engineering!
+            Your 24/7 STEM learning companion. Ask me anything about electronics, programming, or engineering!
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default function MentorPage() {
                     {message.role === 'assistant' && (
                       <div className="flex items-center space-x-2 mb-2">
                         <Bot className="h-4 w-4 text-yellow-400" />
-                        <span className="text-xs font-semibold text-yellow-400">AI Mentor</span>
+                        <span className="text-xs font-semibold text-yellow-400">Bob</span>
                       </div>
                     )}
                     <p className="whitespace-pre-wrap">{message.content}</p>
