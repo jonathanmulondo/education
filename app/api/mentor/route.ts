@@ -82,7 +82,7 @@ Keep responses concise (2-4 paragraphs) but informative.`,
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-4o',
+      model: 'gpt-4o-mini',
       messages,
       temperature: 0.7,
       max_tokens: 500,
