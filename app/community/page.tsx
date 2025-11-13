@@ -184,14 +184,14 @@ export default function CommunityFeedPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Popular Tags */}
-            <div className="card">
-              <h3 className="text-lg font-semibold mb-4">Popular Tags</h3>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold mb-4 text-white">Popular Tags</h3>
               <div className="flex flex-wrap gap-2">
                 {['arduino', 'led', 'sensor', 'esp32', 'raspberry-pi', '3d-printing'].map(
                   (tag) => (
                     <button
                       key={tag}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm hover:bg-primary-100 dark:hover:bg-primary-900 transition-colors"
+                      className="px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300 hover:bg-gray-700 transition-colors"
                     >
                       #{tag}
                     </button>
@@ -201,11 +201,11 @@ export default function CommunityFeedPage() {
             </div>
 
             {/* Community Guidelines */}
-            <div className="card bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
-              <h3 className="text-lg font-semibold mb-2 text-blue-900 dark:text-blue-200">
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold mb-2 text-white">
                 Community Guidelines
               </h3>
-              <ul className="space-y-2 text-sm text-blue-800 dark:text-blue-300">
+              <ul className="space-y-2 text-sm text-gray-300">
                 <li>• Share complete project documentation</li>
                 <li>• Include schematics and code</li>
                 <li>• Be respectful and helpful</li>
@@ -215,17 +215,17 @@ export default function CommunityFeedPage() {
             </div>
 
             {/* Leaderboard Preview */}
-            <div className="card">
-              <h3 className="text-lg font-semibold mb-4">Top Contributors</h3>
+            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+              <h3 className="text-lg font-semibold mb-4 text-white">Top Contributors</h3>
               <div className="space-y-3">
                 {[1, 2, 3].map((rank) => (
                   <div key={rank} className="flex items-center space-x-3">
-                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center text-black font-bold text-sm">
                       {rank}
                     </div>
                     <div className="flex-grow">
-                      <div className="font-medium text-sm">User {rank}</div>
-                      <div className="text-xs text-gray-500">
+                      <div className="font-medium text-sm text-white">User {rank}</div>
+                      <div className="text-xs text-gray-400">
                         {100 - rank * 10} projects
                       </div>
                     </div>
@@ -234,7 +234,7 @@ export default function CommunityFeedPage() {
               </div>
               <Link
                 href="/leaderboard"
-                className="block text-center text-sm text-primary-600 hover:text-primary-700 mt-4"
+                className="block text-center text-sm text-yellow-500 hover:text-yellow-400 mt-4"
               >
                 View Full Leaderboard →
               </Link>

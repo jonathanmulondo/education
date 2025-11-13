@@ -22,18 +22,18 @@ export default function TracksPage() {
             );
 
             return (
-              <div key={track.id} className="card">
+              <div key={track.id} className="bg-gray-900 border border-gray-800 rounded-lg p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg">
-                      <BookOpen className="h-6 w-6 text-primary-600" />
+                    <div className="bg-yellow-500/20 p-3 rounded-lg">
+                      <BookOpen className="h-6 w-6 text-yellow-400" />
                     </div>
                     <div>
-                      <h2 className="text-2xl font-bold mb-2">{track.name}</h2>
+                      <h2 className="text-2xl font-bold mb-2 text-white">{track.name}</h2>
                       <p className="text-gray-400 mb-2">
                         {track.description}
                       </p>
-                      <span className="inline-block px-3 py-1 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">
+                      <span className="inline-block px-3 py-1 bg-gray-800 rounded-full text-sm text-gray-300">
                         {track.category}
                       </span>
                     </div>
@@ -42,7 +42,7 @@ export default function TracksPage() {
 
                 {/* Projects in Track */}
                 <div className="mt-6">
-                  <h3 className="text-lg font-semibold mb-4">
+                  <h3 className="text-lg font-semibold mb-4 text-white">
                     Projects in this track ({trackProjects.length})
                   </h3>
                   <div className="space-y-3">
@@ -50,13 +50,13 @@ export default function TracksPage() {
                       <Link
                         key={project.id}
                         href={`/projects/${project.id}`}
-                        className="flex items-center space-x-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        className="flex items-center space-x-4 p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
                       >
-                        <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold">
+                        <div className="flex-shrink-0 w-8 h-8 bg-yellow-500 text-black rounded-full flex items-center justify-center font-semibold">
                           {index + 1}
                         </div>
                         <div className="flex-grow">
-                          <h4 className="font-semibold text-gray-900 dark:text-white">
+                          <h4 className="font-semibold text-white">
                             {project.title}
                           </h4>
                           <p className="text-sm text-gray-400">
@@ -71,7 +71,7 @@ export default function TracksPage() {
 
                 {/* Enroll Button */}
                 <div className="mt-6">
-                  <button className="btn-primary">
+                  <button className="px-6 py-3 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition-colors font-semibold">
                     Enroll in this Track
                   </button>
                 </div>
@@ -81,12 +81,12 @@ export default function TracksPage() {
         </div>
 
         {/* Coming Soon */}
-        <div className="card mt-8 text-center">
-          <h3 className="text-xl font-semibold mb-2">More Tracks Coming Soon!</h3>
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mt-8 text-center">
+          <h3 className="text-xl font-semibold mb-2 text-white">More Tracks Coming Soon!</h3>
           <p className="text-gray-400 mb-4">
             We're working on additional learning tracks for various STEM disciplines
           </p>
-          <Link href="/projects" className="text-primary-600 hover:text-primary-700">
+          <Link href="/projects" className="text-yellow-500 hover:text-yellow-400">
             Browse individual projects in the meantime →
           </Link>
         </div>
