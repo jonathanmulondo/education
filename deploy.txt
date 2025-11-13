@@ -1,0 +1,105 @@
+═══════════════════════════════════════════════════════════════
+  PRACTICUM - DEPLOYMENT COMMANDS
+═══════════════════════════════════════════════════════════════
+
+Your repository is ready! Follow these steps:
+
+STEP 1: Create GitHub Repository
+═══════════════════════════════════════════════════════════════
+1. Go to: https://github.com/new
+2. Repository name: practicum
+3. Description: STEM learning platform with AI mentorship
+4. Public or Private: Your choice
+5. DO NOT check "Add README" or "Add .gitignore"
+6. Click "Create repository"
+
+
+STEP 2: Push Code to GitHub
+═══════════════════════════════════════════════════════════════
+After creating the repo, run these commands in this directory:
+
+git remote add origin https://github.com/YOUR_USERNAME/practicum.git
+git branch -M main
+git push -u origin main
+
+(Replace YOUR_USERNAME with your GitHub username)
+
+
+STEP 3: Deploy to Vercel
+═══════════════════════════════════════════════════════════════
+1. Go to: https://vercel.com
+2. Sign up/login with GitHub
+3. Click "Add New..." → "Project"
+4. Import your "practicum" repository
+5. Vercel auto-detects Next.js ✓
+6. Click "Deploy"
+
+Your site will be live in ~60 seconds!
+
+
+STEP 4: Add Environment Variables (Optional)
+═══════════════════════════════════════════════════════════════
+In Vercel dashboard → Settings → Environment Variables:
+
+For AI Mentor:
+- OPENAI_API_KEY (or ANTHROPIC_API_KEY)
+- Add to Production, Preview, Development
+
+For Database:
+- NEXT_PUBLIC_SUPABASE_URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY
+- Add to Production, Preview, Development
+
+Then redeploy!
+
+
+WHAT'S INCLUDED
+═══════════════════════════════════════════════════════════════
+✅ 7 fully functional pages
+✅ 3 sample STEM projects (Arduino, PCB, Motors)
+✅ AI mentor chat (OpenAI/Anthropic ready)
+✅ Admin panel for content management
+✅ User dashboard with progress tracking
+✅ Learning tracks system
+✅ Complete documentation
+✅ Responsive design + dark mode
+✅ Production-ready build
+
+
+YOUR LIVE SITE WILL HAVE
+═══════════════════════════════════════════════════════════════
+- Custom Vercel URL: practicum-[random].vercel.app
+- Auto SSL/HTTPS
+- Global CDN
+- Auto-deployments on every git push
+- Preview deployments for PRs
+
+
+QUICK REFERENCE
+═══════════════════════════════════════════════════════════════
+Project location: C:\Users\mulon\Desktop\edtech
+Local dev server: npm run dev
+View locally: http://localhost:3000
+
+Future updates:
+  git add .
+  git commit -m "Your changes"
+  git push
+  (Vercel auto-deploys!)
+
+
+DOCUMENTATION
+═══════════════════════════════════════════════════════════════
+📖 README.md - Full documentation
+📖 SETUP_GUIDE.md - Detailed setup instructions
+📖 DEPLOYMENT.md - Deployment guide (detailed)
+📖 QUICK_START.md - 5-minute quick start
+📖 FEATURES.md - Complete features list
+📖 PROJECT_SUMMARY.md - What was built
+
+
+Need help? Check DEPLOYMENT.md for troubleshooting!
+
+═══════════════════════════════════════════════════════════════
+  Ready to deploy! 🚀
+═══════════════════════════════════════════════════════════════
