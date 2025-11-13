@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, BookOpen, User } from 'lucide-react';
+import { Menu, X, BookOpen, User, Trophy, Users } from 'lucide-react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +32,20 @@ export default function Navbar() {
               className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
             >
               Learning Tracks
+            </Link>
+            <Link
+              href="/community"
+              className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              <Users className="h-4 w-4" />
+              <span>Community</span>
+            </Link>
+            <Link
+              href="/leaderboard"
+              className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+            >
+              <Trophy className="h-4 w-4" />
+              <span>Leaderboard</span>
             </Link>
             <Link
               href="/dashboard"
@@ -73,6 +87,20 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Learning Tracks
+            </Link>
+            <Link
+              href="/community"
+              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Community
+            </Link>
+            <Link
+              href="/leaderboard"
+              className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Leaderboard
             </Link>
             <Link
               href="/dashboard"
