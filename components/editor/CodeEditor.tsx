@@ -34,7 +34,14 @@ export default function CodeEditor({
     // Add Arduino snippets for C++
     if (language === 'cpp') {
       monaco.languages.registerCompletionItemProvider('cpp', {
-        provideCompletionItems: () => {
+        provideCompletionItems: (model, position) => {
+          const word = model.getWordUntilPosition(position);
+          const range = {
+            startLineNumber: position.lineNumber,
+            endLineNumber: position.lineNumber,
+            startColumn: word.startColumn,
+            endColumn: word.endColumn,
+          };
           return {
             suggestions: [
               {
@@ -43,6 +50,7 @@ export default function CodeEditor({
                 insertText: 'void setup() {\n\t$0\n}',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Arduino setup function',
+                range,
               },
               {
                 label: 'loop',
@@ -50,6 +58,7 @@ export default function CodeEditor({
                 insertText: 'void loop() {\n\t$0\n}',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Arduino loop function',
+                range,
               },
               {
                 label: 'pinMode',
@@ -57,6 +66,7 @@ export default function CodeEditor({
                 insertText: 'pinMode(${1:pin}, ${2:mode});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Set pin mode (INPUT, OUTPUT, INPUT_PULLUP)',
+                range,
               },
               {
                 label: 'digitalWrite',
@@ -64,6 +74,7 @@ export default function CodeEditor({
                 insertText: 'digitalWrite(${1:pin}, ${2:value});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Write digital value (HIGH or LOW)',
+                range,
               },
               {
                 label: 'digitalRead',
@@ -71,6 +82,7 @@ export default function CodeEditor({
                 insertText: 'digitalRead(${1:pin})$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Read digital value from pin',
+                range,
               },
               {
                 label: 'analogWrite',
@@ -78,6 +90,7 @@ export default function CodeEditor({
                 insertText: 'analogWrite(${1:pin}, ${2:value});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Write PWM value (0-255)',
+                range,
               },
               {
                 label: 'analogRead',
@@ -85,6 +98,7 @@ export default function CodeEditor({
                 insertText: 'analogRead(${1:pin})$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Read analog value (0-1023)',
+                range,
               },
               {
                 label: 'delay',
@@ -92,6 +106,7 @@ export default function CodeEditor({
                 insertText: 'delay(${1:ms});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Delay in milliseconds',
+                range,
               },
               {
                 label: 'Serial.begin',
@@ -99,6 +114,7 @@ export default function CodeEditor({
                 insertText: 'Serial.begin(${1:9600});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Initialize serial communication',
+                range,
               },
               {
                 label: 'Serial.println',
@@ -106,6 +122,7 @@ export default function CodeEditor({
                 insertText: 'Serial.println(${1:value});$0',
                 insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
                 documentation: 'Print line to serial monitor',
+                range,
               },
             ],
           };

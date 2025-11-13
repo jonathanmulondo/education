@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Plus, TrendingUp, Clock, Award, Filter } from 'lucide-react';
-import Link from 'link';
+import Link from 'next/link';
 import CommunityProjectCard from '@/components/community/CommunityProjectCard';
 import type { CommunityProject } from '@/types/enhanced';
 
