@@ -42,25 +42,25 @@ export default function LeaderboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
+    <div className="min-h-screen bg-black py-8 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 mb-2">
             <Trophy className="h-8 w-8 text-yellow-500" />
-            <h1>Leaderboard</h1>
+            <h1 className="text-white">Leaderboard</h1>
           </div>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-gray-400">
             Top performers in the Practicum community
           </p>
         </div>
 
         {/* Filters */}
-        <div className="card mb-8">
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
             {/* Category Selection */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Rank by:
               </label>
               <div className="flex space-x-2">
@@ -68,8 +68,8 @@ export default function LeaderboardPage() {
                   onClick={() => setCategory('xp')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     category === 'xp'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   <div className="flex items-center space-x-1">
@@ -81,8 +81,8 @@ export default function LeaderboardPage() {
                   onClick={() => setCategory('streak')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     category === 'streak'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   Streak
@@ -91,8 +91,8 @@ export default function LeaderboardPage() {
                   onClick={() => setCategory('reputation')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     category === 'reputation'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   Reputation
@@ -102,7 +102,7 @@ export default function LeaderboardPage() {
 
             {/* Time Period */}
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              <label className="block text-sm font-medium text-gray-300 mb-2">
                 Time Period:
               </label>
               <div className="flex space-x-2">
@@ -112,8 +112,8 @@ export default function LeaderboardPage() {
                     onClick={() => setPeriod(p as any)}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       period === p
-                        ? 'bg-primary-600 text-white'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                        ? 'bg-yellow-500 text-black'
+                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                     }`}
                   >
                     {p === 'all' ? 'All Time' : p.charAt(0).toUpperCase() + p.slice(1)}
@@ -179,12 +179,12 @@ export default function LeaderboardPage() {
         )}
 
         {/* Full Leaderboard */}
-        <div className="card">
-          <h2 className="text-xl font-bold mb-4">Rankings</h2>
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
+          <h2 className="text-xl font-bold mb-4 text-white">Rankings</h2>
 
           {loading ? (
             <div className="text-center py-12">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto" />
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto" />
             </div>
           ) : users.length > 0 ? (
             <div className="space-y-2">

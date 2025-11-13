@@ -77,28 +77,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="bg-gradient-to-r from-yellow-500 to-yellow-600 py-8 px-4">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div>
-            <div className="text-3xl font-bold text-black">2,500+</div>
-            <div className="text-sm text-black/70">Active Learners</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-black">150+</div>
-            <div className="text-sm text-black/70">Projects</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-black">50K+</div>
-            <div className="text-sm text-black/70">XP Earned</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-black">1,200+</div>
-            <div className="text-sm text-black/70">Achievements</div>
-          </div>
-        </div>
-      </section>
-
       {/* Gamification Features */}
       <section className="py-16 px-4 bg-black">
         <div className="max-w-7xl mx-auto">

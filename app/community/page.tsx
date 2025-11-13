@@ -61,13 +61,13 @@ export default function CommunityFeedPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
+    <div className="min-h-screen bg-black py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="mb-2">Community Projects</h1>
-            <p className="text-gray-600 dark:text-gray-400">
+            <h1 className="mb-2 text-white">Community Projects</h1>
+            <p className="text-gray-400">
               Share your creations and discover what others are building
             </p>
           </div>
@@ -79,12 +79,12 @@ export default function CommunityFeedPage() {
         </div>
 
         {/* Filters */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-4 mb-6">
+        <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 mb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
             {/* Sort Options */}
             <div className="flex items-center space-x-2">
               <Filter className="h-5 w-5 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <span className="text-sm font-medium text-gray-300">
                 Sort by:
               </span>
               <div className="flex space-x-2">
@@ -92,8 +92,8 @@ export default function CommunityFeedPage() {
                   onClick={() => setSortBy('hot')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     sortBy === 'hot'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   <div className="flex items-center space-x-1">
@@ -105,8 +105,8 @@ export default function CommunityFeedPage() {
                   onClick={() => setSortBy('new')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     sortBy === 'new'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   <div className="flex items-center space-x-1">
@@ -118,8 +118,8 @@ export default function CommunityFeedPage() {
                   onClick={() => setSortBy('top')}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     sortBy === 'top'
-                      ? 'bg-primary-600 text-white'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                      ? 'bg-yellow-500 text-black'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                   }`}
                 >
                   <div className="flex items-center space-x-1">
@@ -132,13 +132,13 @@ export default function CommunityFeedPage() {
 
             {/* Category Filter */}
             <div className="flex items-center space-x-2">
-              <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+              <span className="text-sm font-medium text-gray-300">
                 Category:
               </span>
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-sm"
+                className="px-4 py-2 border border-gray-700 rounded-lg bg-gray-800 text-gray-300 text-sm"
               >
                 {categories.map((cat) => (
                   <option key={cat} value={cat}>
